@@ -3,21 +3,6 @@ Eduportal
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
 Ruby on Rails
 -------------
 
@@ -27,24 +12,36 @@ This application requires:
 - Rails 4.2.5.2
 
 Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+> Recommend installing ruby using rbenv.
 
-Getting Started
----------------
-
+<!-- Getting Started -->
 Documentation and Support
 -------------------------
+- For suggestions, errors or general info contact: will.i.yeezy@gmail.com
 
-Issues
--------------
-
-Similar Projects
-----------------
-
+<!-- Issues -->
 Contributing
 ------------
+- master branch -> production ready code
+- develop branch -> new feature development
+
+1. Grab the repository: git clone https://github.com/wyllos/eduportal.git
+2. Create branch for new feature: git checkout -b myFeature develop
+3. After completing feature, add changed files: git add -p , check file differences
+4. Commit changes: git commit -m "Commit message."
+5. Switch to develop branch: git checkout develop
+6. Merge changes: git merge --no-ff newFeatureBranch
+7. Delete feature branch: git branch -d newFeatureBranch
+8. Finally: git push origin develop
+9. Fetch latest changes: git pull --ff-only origin develop
+10. Repeat from step 2
+
+- Commit messages should be complete sentences with Capitals and full stop.
+- Branch names should indicate feature with words-separated-by-hyphens.
+- Don't push changes to master (including bug fixes), contact admin first.
 
 Credits
 -------
+Eduportal is developed and maintained by the Renstine Multimedia Group.
 
-License
--------
+<!-- License -->
