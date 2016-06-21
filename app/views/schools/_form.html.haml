@@ -1,0 +1,23 @@
+= simple_form_for(@school) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :phone
+    = f.input :email
+    .form-group
+      = f.label :ownership
+      = f.select :ownership, School.ownership_options, {}, {class: 'form-control'}
+    .form-group
+      = f.label :level
+      = f.select :level, School.level_options, {}, {class: 'form-control'}
+    .form-group
+      = f.label :mode
+      = f.select :mode, School.mode_options, {}, {class: 'form-control'}
+    .form-group
+      = f.label :gender
+      = f.select :gender, School.gender_options, {}, {class: 'form-control'}
+    = f.input :about
+
+  .form-actions
+    = f.button :submit
