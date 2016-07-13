@@ -18,6 +18,8 @@ ownership = ['private', 'public']
 levels = ['primary', 'secondary', 'pre-school', 'all', 'other']
 modes = ['day', 'boarding', 'mixed']
 schools = []
+states = []
+locations = []
 
 # Create schools
 school_names.each { |school|

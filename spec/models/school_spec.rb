@@ -53,4 +53,7 @@ RSpec.describe School, type: :model do
     @school.level = 'university'
     expect(@school).to_not be_valid
   end
+
+  it { should validate_presence_of(:name) }
+
 end
