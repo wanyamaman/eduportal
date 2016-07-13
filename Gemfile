@@ -7,6 +7,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'geocoder'
+gem 'country_select', '~> 2.5', '>= 2.5.2'
 group :development, :test do
   gem 'byebug'
 end
@@ -43,4 +45,5 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.0'
 end

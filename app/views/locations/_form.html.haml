@@ -1,0 +1,14 @@
+= simple_form_for(@location) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :street
+    = f.input :city
+    = f.input :state
+    = f.input :country
+    = f.input :zip
+    = f.input :latitude
+    = f.input :longitude
+
+  .form-actions
+    = f.button :submit

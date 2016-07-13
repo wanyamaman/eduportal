@@ -1,5 +1,7 @@
 class School < ActiveRecord::Base
 
+  # belongs_to :locations
+
   @@ownership_type = %w(private public)
   @@level_type = %w(primary secondary pre-school all other)
   @@mode_type = %w(day boarding mixed other)
