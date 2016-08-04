@@ -23,6 +23,7 @@ class School < ActiveRecord::Base
   validates :gender, inclusion: {in: @@gender_type},
             presence: true,
             length: {maximum:50}
+  validates :about, presence: true
 
   def self.ownership_options
     @@ownership_type.map { |o| [o,o] }
