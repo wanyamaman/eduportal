@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712174632) do
+ActiveRecord::Schema.define(version: 20160804190303) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "street",     limit: 255, default: "", null: false
@@ -28,14 +28,19 @@ ActiveRecord::Schema.define(version: 20160712174632) do
   add_index "locations", ["state_id"], name: "index_locations_on_state_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
-    t.string  "name",      limit: 255,                         null: false
-    t.integer "phone",     limit: 4
-    t.string  "email",     limit: 50
-    t.string  "ownership", limit: 50,    default: "private",   null: false
-    t.string  "level",     limit: 50,    default: "secondary", null: false
-    t.string  "mode",      limit: 50,    default: "day",       null: false
-    t.string  "gender",    limit: 50,    default: "mixed",     null: false
-    t.text    "about",     limit: 65535
+    t.string  "name",       limit: 255,                         null: false
+    t.integer "phone",      limit: 4
+    t.string  "email",      limit: 50
+    t.string  "ownership",  limit: 50,    default: "private",   null: false
+    t.string  "level",      limit: 50,    default: "secondary", null: false
+    t.string  "mode",       limit: 50,    default: "day",       null: false
+    t.string  "gender",     limit: 50,    default: "mixed",     null: false
+    t.text    "about",      limit: 65535
+    t.text    "news",       limit: 65535
+    t.text    "faculties",  limit: 65535
+    t.text    "staff",      limit: 65535
+    t.text    "academics",  limit: 65535
+    t.text    "contact_us", limit: 65535
   end
 
   create_table "states", force: :cascade do |t|
