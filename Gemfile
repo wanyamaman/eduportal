@@ -32,6 +32,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'byebug'
+  gem 'coveralls', require: false
 end
 
 group :test do
