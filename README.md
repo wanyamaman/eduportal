@@ -1,6 +1,7 @@
 Eduportal
 ================
 [![Build Status](https://travis-ci.org/wanyamaman/eduportal.svg?branch=develop)](https://travis-ci.org/wanyamaman/eduportal)
+[![Code Climate](https://codeclimate.com/github/wanyamaman/eduportal/badges/gpa.svg)](https://codeclimate.com/github/wanyamaman/eduportal)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 Ruby on Rails
