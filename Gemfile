@@ -42,6 +42,8 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0'
   gem 'rake'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 group :production do
