@@ -1,4 +1,4 @@
-class School < ActiveRecord::Base
+class School < ApplicationRecord
 
   # belongs_to :locations
 
