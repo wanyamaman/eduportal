@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   enum role: [:staff, :moderator, :admin]
   after_initialize :set_default_role, :if => :new_record?
 

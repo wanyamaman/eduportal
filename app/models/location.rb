@@ -1,4 +1,4 @@
-class Location < ActiveRecord::Base
+class Location < ApplicationRecord
   belongs_to :state, counter_cache: true
   geocoded_by :address
 
