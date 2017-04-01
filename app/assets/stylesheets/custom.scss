@@ -1,0 +1,36 @@
+
+/* FOOTER */
+
+footer {
+  background-color: $grey-washed;
+  p, small {
+    color: $gray-light;
+  }
+  a {
+    text-decoration: none;
+  }
+  .list-inline {
+    padding-left: 6px;
+  }
+  ul {
+    margin-top: 2px;
+    margin-bottom: 5px;
+  }
+  li.link {
+    border-left: 1px solid $gray-light;
+  }
+}
+
+.footer-inner {
+  padding: 30px 0;
+}
+
+.footer-bottom {
+  background-color: $grey-dark;
+  padding: 10px 0;
+}
+
+/* COMMON STYLES */
+.no-underline {
+  text-decoration: none !important;
+}
