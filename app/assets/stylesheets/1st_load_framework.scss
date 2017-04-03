@@ -40,7 +40,6 @@ main {
   background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
@@ -83,14 +82,14 @@ section {
   @extend .btn-xs;
 }
 
-/* Theme */
+/* THEME */
 
 $grey-washed: #191b1f;
 $grey-dark: #0d0e11;
 $brand-red: #b01e23;
 $brand-yellow: #ff9f1d;
 
-/* Utility classes */
+/* UTILITY CLASSES */
 
 .text-xs-left { text-align: left; }
 .text-xs-right { text-align: right; }

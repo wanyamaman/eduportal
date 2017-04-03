@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
+gem 'active_link_to'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'country_select', '~> 2.5', '>= 2.5.2'
