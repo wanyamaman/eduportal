@@ -12,6 +12,6 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       = render 'layouts/messages'
-      = yield
+      = content_for?(:uncontained) ? yield(:uncontained) : render('layouts/contained')
     %footer
       = render 'layouts/footer'
