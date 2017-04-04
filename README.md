@@ -4,16 +4,21 @@ Eduportal
 [![Code Climate](https://codeclimate.com/github/wanyamaman/eduportal/badges/gpa.svg)](https://codeclimate.com/github/wanyamaman/eduportal)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+- Eduportal was an online schools directory based in Kenya
+- The project was initialy launched in 2015
+- As of Jan 2017, the project is no longer active. Web Archive can be found [here](https://web.archive.org/web/20160306120529/http://eduportal.co.ke/)
+- The initial implementation was completed in Joomla! This repository serves as a recreation of the project done in Rails as was originaly intented
+
 Ruby on Rails
 -------------
 
-This application requires:
+This application uses:
 
 - Ruby 2.3.3
-- Rails 4.2.7.1
+- Rails 5.0.2
 
 Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-> Recommend installing ruby using rbenv.
+> We recommend installing ruby using rbenv.
 
 <!-- Getting Started -->
 Documentation and Support
@@ -32,24 +37,26 @@ Contributing
 3. Set clone to track upstream: `git remote add upstream git@github.com:wanyamaman/eduportal.git`
 4. Install gems: `bundle install`
 5. Make sure tests are passing: `bundle exec rspec`
+6. Seed the database: `rails db:seed`
 
 **Daily workflow**
 1. Fetch updates: `git pull upstream develop`
-2. Create new feature branch: `git checkout -b <myFeature>`
-3. After completing feature, add changed files: `git add -p <filename>` , check file differences
-4. Make sure tests are passing: `bundle exec rspec`
-5. Commit changes: `git commit -m "Commit message."`
-6. Pull in latest changes to develop: _same as step 1_
-7. Update feature branch with upstream changes: `git rebase develop`
-8. Fix merge conflicts
-9. Push changes to your fork: `git push origin <myFeature>`
-10. Create a pull request from your fork on github
+2. Make sure to start from develop branch: `git checkout develop`
+3. Create new feature branch: `git checkout -b <myFeature>`
+4. After completing feature, add changed files: `git add -p <filename>` , check file differences
+5. Make sure tests are passing: `bundle exec rspec`
+6. Commit changes: `git commit -m "Commit message."`
+7. Pull in latest changes to develop: _same as step 1_
+8. Update feature branch with upstream changes: `git rebase develop`
+9. Fix merge conflicts
+10. Push changes to your fork: `git push origin <myFeature>`
+11. Create a pull request from your fork on github
 
 - Commit messages should be complete sentences written in the imperative mood.
 - Branch names should indicate feature with words-separated-by-hyphens.
 
 Credits
 -------
-Eduportal is developed and maintained by the Renstine Multimedia Group.
+Eduportal is developed and maintained on behalf of [Renstine Multimedia Group](http://renstine.co.ke/).
 
 <!-- License -->
