@@ -15,3 +15,15 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+  var maxHeight=0;
+  $(".tab-content .tab-pane").each(function(){
+      $(this).addClass("active");
+     var height = $(this).height();
+      maxHeight = height>maxHeight?height:maxHeight;
+      $(this).removeClass("active");
+  });
+  $(".tab-content .tab-pane:first").addClass("active");
+  $(".tab-content").height(maxHeight);
+});

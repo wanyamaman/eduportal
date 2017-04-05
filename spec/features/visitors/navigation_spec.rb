@@ -18,4 +18,14 @@ feature 'Navigation links', :devise do
     expect(page).to have_link 'Contact Us'
   end
 
+  # Scenario: Visit About page
+  # Given I am a visitor
+  # When I click on "About Us" link
+  # Then I visit the about page
+  scenario 'visit about page' do
+    visit root_path
+    click_link('About Us', match: :first)
+    expect(page).to have_current_path(page_path('about'))
+  end
+
 end

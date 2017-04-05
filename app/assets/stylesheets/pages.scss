@@ -1,0 +1,24 @@
+/* ABOUT */
+
+.about {
+  .table th, .table td {
+    border-top: none;
+  }
+
+  .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .nav-pills > li.active > a {
+    background-color: white;
+    color: $brand-red;
+  }
+
+  .tab-content {
+    background-color: white;
+    padding : 20px 20px;
+  }
+}
