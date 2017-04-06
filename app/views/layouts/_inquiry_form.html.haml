@@ -1,0 +1,7 @@
+= simple_form_for resource, html: { role: 'form', id: 'contact-form'}, remote: true do |f|
+  = f.input :name, label: false, placeholder: 'Your Name'
+  = f.input :email, label: false, placeholder: 'Your Email'
+  = f.input :subject, label: false, placeholder: 'Subject', required: false
+  = f.input :message, label: false, as: :text, placeholder: 'Enter Your Message', autofocus: true, input_html: { rows: 6 }
+
+  = f.button :submit, 'SEND', class: 'btn btn-brand-secondary btn-block'

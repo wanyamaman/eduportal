@@ -1,0 +1,32 @@
+- content_for :title do
+  Contact
+.center-block.content-padding
+  %h3 Get In Touch With Us
+  %section.contact.cushion
+    .form
+      #inquiry-form
+        = render 'layouts/inquiry_form', resource: Inquiry.new
+    %br.visible-xs-block.visible-sm-block
+    .col-md-3
+      .box-content
+        %p Or reach us directly through:
+        %table.table.table-condensed.table-responsive
+          %tr
+            %td
+              %abbr{:title => "Cellphone"}
+                = icon('phone')
+            %td
+              123456789
+          %tr
+            %td
+              %abbr{:title => "Email"}
+                = icon('envelope')
+            %td
+              inquiries@renstine.co.ke
+
+        %ul.list-unstyled.list-inline
+          %li= link_to icon("facebook-square", class: 'fa-2x'), 'javascript:;', class: "no-underline bg-transparent"
+          %li= link_to icon("twitter-square", class: 'fa-2x'), 'javascript:;', class: "no-underline bg-transparent"
+          %li= link_to icon("youtube-square", class: 'fa-2x'), 'javascript:;', class: "no-underline bg-transparent"
+          %li= link_to icon("google-plus-square", class: 'fa-2x'), 'javascript:;', class: "no-underline bg-transparent"
+

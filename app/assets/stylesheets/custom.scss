@@ -2,6 +2,7 @@
 
 .bg-brand-primary { background-color: $brand-red; }
 .bg-brand-secondary { background-color: $brand-yellow; }
+.bg-transparent { background-color: transparent !important; }
 
 .text-primary { color: $brand-red !important; }
 .text-secondary { color: $brand-yellow !important; }
@@ -11,6 +12,7 @@
 
 html {
   font-size: 100%;
+  background-color: $grey-dark;
 }
 
 body {
@@ -112,6 +114,7 @@ footer {
   }
   a {
     text-decoration: none;
+    color: $gray-light;
   }
   .list-inline {
     padding-left: 6px;
@@ -143,4 +146,37 @@ footer {
 .alert {
   z-index: 1052;
   position: relative;
+}
+
+.content {
+  background-color: $gray-lighter;
+  .cushion {
+    padding-bottom: 80px;
+  }
+}
+
+.content-padding {
+  padding: 0 15px;
+}
+
+.box-content {
+  background-color: white;
+  padding: 20px 15px;
+  .table th, .table td {
+    border-top: none;
+  }
+
+  .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+    &:hover {
+      color: $gray;
+    }
+  }
+  a > .fa {
+    color: $gray-light;
+    &:hover {
+      background: transparent;
+      color: $grey-dark;
+    }
+  }
 }

@@ -1,0 +1,13 @@
+/* ABOUT */
+
+.about {
+  .nav-pills > li.active > a {
+    background-color: white;
+    color: $brand-red;
+  }
+
+  .tab-content {
+    background-color: white;
+    padding : 20px 20px;
+  }
+}

@@ -7,7 +7,6 @@ class School < ApplicationRecord
   @@mode_type = %w(day boarding mixed other)
   @@gender_type = %w(male female mixed)
 
-  EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
   validates :name, presence: true, length: 3..255
   validates :email, length: 5..100, format: EMAIL_REGEX
   validates :phone, numericality: {only_integer: true}

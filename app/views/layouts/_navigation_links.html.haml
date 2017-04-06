@@ -1,5 +1,5 @@
 = active_link_to 'Home', root_path, active: :exclusive, wrap_tag: :li, wrap_class: (current_page?(root_path) ? 'text-primary': '')
 = active_link_to 'Schools', schools_path, wrap_tag: :li, wrap_class: (current_page?(schools_path) ? 'text-secondary': '')
 = active_link_to 'Blog', 'javascript:;', wrap_tag: :li
-= active_link_to 'About Us', 'javascript:;', wrap_tag: :li
-= active_link_to 'Contact Us', 'javascript:;', wrap_tag: :li
+= active_link_to 'About Us', page_path('about'), wrap_tag: :li, wrap_class: (current_page?(page_path('about')) ? 'text-secondary': '')
+= active_link_to 'Contact Us', page_path('contact'), wrap_tag: :li, wrap_class: (current_page?(page_path('contact')) ? 'text-secondary': '')

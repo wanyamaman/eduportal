@@ -37,13 +37,12 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  padding-bottom: 80px;
   width: 100%;
-  }
+}
 section {
   @extend .row;
   margin-top: 20px;
-  }
+}
 
 // Styles for form views
 // using Bootstrap
@@ -131,5 +130,27 @@ $brand-yellow: #ff9f1d;
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
+  }
+}
+
+/* BUTTONS */
+
+.btn-brand-secondary {
+  @extend .btn-default;
+  background-color: $brand-yellow;
+  color: white;
+  &:hover {
+    background-color: darken($brand-yellow, 10%);
+    color: white;
+  }
+}
+
+.btn-brand-primary {
+  @extend .btn-default;
+  background-color: $brand-red;
+  color: white;
+  &:hover {
+    background-color: darken($brand-red, 10%);
+    color: white;
   }
 }
