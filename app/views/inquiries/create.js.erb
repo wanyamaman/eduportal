@@ -1,0 +1,7 @@
+<% if @inquiry.valid? %>
+  $('#inquiry-form').html(
+    "<h2 style='color: black'>Thank you for contacting us!</h2><h3 style='color: black'>We will be in touch shortly.</h3>"
+    );
+<% else %>
+  $('#inquiry-form').html("<%= j render 'layouts/inquiry_form', resource: @inquiry %>");
+<% end %>
