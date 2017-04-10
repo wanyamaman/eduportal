@@ -67,4 +67,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  CarrierWave.configure do |car_config|
+    car_config.ignore_integrity_errors = false
+    car_config.ignore_processing_errors = false
+    car_config.ignore_download_errors = false
+  end
 end

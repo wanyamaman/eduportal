@@ -24,6 +24,10 @@
 %p
   %b About us:
   = @school.about
+- unless @school.logo_url.nil?
+  %p
+    %b Logo
+    = image_tag @school.logo_url
 
 = link_to 'Edit', edit_school_path(@school)
 \|

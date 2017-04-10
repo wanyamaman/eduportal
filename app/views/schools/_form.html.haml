@@ -17,7 +17,12 @@
     .form-group
       = f.label :gender
       = f.select :gender, School.gender_options, {}, {class: 'form-control'}
-    = f.input :about
+    = f.input :about, as: :text, input_html: { rows: 6 }
+    .form-group
+      = f.label :logo
+      = image_tag(@school.logo_url) if @school.logo?
+      = f.file_field :logo
+      = f.hidden_field :logo_cache
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-brand-secondary'
