@@ -2,14 +2,16 @@ class School < ApplicationRecord
 
   # belongs_to :locations
 
+  mount_uploader :logo, LogoUploader
+
   @@ownership_type = %w(private public)
   @@level_type = %w(primary secondary pre-school all other)
   @@mode_type = %w(day boarding mixed other)
   @@gender_type = %w(male female mixed)
 
   validates :name, presence: true, length: 3..255
-  validates :email, length: 5..100, format: EMAIL_REGEX
-  validates :phone, numericality: {only_integer: true}
+  validates :email, length: 5..100, format: EMAIL_REGEX, allow_blank: true
+  validates :phone, numericality: {only_integer: true}, allow_nil: true
   validates :ownership, inclusion: {in: @@ownership_type},
             length: {maximum: 50},
             presence: true

@@ -67,8 +67,11 @@ class SchoolsController < ApplicationController
       @school = School.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Parameters white list
     def school_params
-      params.require(:school).permit(:name, :phone, :email, :ownership, :level, :mode, :gender, :about)
+      params.require(:school).permit(:name, :phone, :email, :ownership,
+                                     :level, :mode, :gender, :about, :logo,
+                                     :news, :staff, :faculties, :academics,
+                                     :contact_us)
     end
 end
