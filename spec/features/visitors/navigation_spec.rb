@@ -32,7 +32,7 @@ feature 'Navigation links', :devise do
   # Given I am a visitor
   # When I click on "Contact Us" link
   # Then I visit the contact page
-  scenario 'visit about page' do
+  scenario 'visit contact page' do
     visit root_path
     click_link('Contact Us', match: :first)
     expect(page).to have_current_path(page_path('contact'))

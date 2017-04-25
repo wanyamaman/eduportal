@@ -14,5 +14,14 @@ module Features
       fill_in 'Password', with: password
       click_button 'Sign in'
     end
+
+    # Logs out a user
+    def signout
+      visit root_path
+      begin
+        click_link 'Log out'
+      rescue Capybara::ElementNotFound
+      end
+    end
   end
 end
