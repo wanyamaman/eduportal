@@ -26,20 +26,46 @@ class School < ApplicationRecord
             length: {maximum:50}
   validates :about, presence: true
 
+  # School options
   def self.ownership_options
-    @@ownership_type.map { |o| [o,o] }
+    @@ownership_type.map { |o| [o,o] }.unshift(["any", "" ])
   end
 
   def self.level_options
-    @@level_type.map { |l| [l,l] }
+    @@level_type.map { |l| [l,l] }.unshift(["any", "" ])
   end
 
   def self.mode_options
-    @@mode_type.map { |m| [m,m] }
+    @@mode_type.map { |m| [m,m] }.unshift(["any", "" ])
   end
 
   def self.gender_options
-    @@gender_type.map { |g| [g,g] }
+    @@gender_type.map { |g| [g,g] }.unshift(["any", "" ])
+  end
+
+  # Conditionally build a search query based on school options
+  def self.index_query(params)
+    options = {}
+    fields = ['ownership','level', 'mode', 'gender']
+
+    # Collect form fields if present
+    if params.present?
+      fields.each do |field|
+        # Skip field if missing or is 'any'
+        options[field] = params[field] unless params[field].blank?
+      end
+    end
+
+    if options.present?
+      # Return filtered and paginated schools
+      query = where(options).paginate(page: params[:page])
+    else
+      # Return paginated results of all schools
+      query = paginate(page: params[:page])
+    end
+
+    # Only return required fields for faster queries on heavy data sets
+    query.select(:id, :name, :about)
   end
 
 end
