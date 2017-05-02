@@ -17,6 +17,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
+  // Equal height columns
   var maxHeight=0;
   $(".tab-content .tab-pane").each(function(){
       $(this).addClass("active");

@@ -3,6 +3,7 @@ ruby '2.3.3'
 
 gem 'active_link_to'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'coffee-rails', '~> 4.1.0'

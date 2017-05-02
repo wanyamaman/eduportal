@@ -38,6 +38,11 @@ img {
 main {
   @extend .container;
   width: 100%;
+  a {
+    &:visited {
+      color: white;
+    }
+  }
 }
 section {
   @extend .row;
@@ -95,6 +100,7 @@ $grey-washed: #191b1f;
 $grey-dark: #0d0e11;
 $brand-red: #b01e23;
 $brand-yellow: #ff9f1d;
+$brand-orange: #EF4F2D;
 
 /* UTILITY CLASSES */
 
@@ -133,13 +139,17 @@ $brand-yellow: #ff9f1d;
   }
 }
 
+.block {
+  display: block;
+}
+
 /* BUTTONS */
 
 .btn-brand-secondary {
   @extend .btn-default;
   background-color: $brand-yellow;
   color: white;
-  &:hover {
+  &:hover, &:active:hover {
     background-color: darken($brand-yellow, 10%);
     color: white;
   }
@@ -149,8 +159,18 @@ $brand-yellow: #ff9f1d;
   @extend .btn-default;
   background-color: $brand-red;
   color: white;
-  &:hover {
+  &:hover, &:active:hover {
     background-color: darken($brand-red, 10%);
+    color: white;
+  }
+}
+
+.btn-brand-orange {
+  @extend .btn-default;
+  background-color: $brand-orange;
+  color: white;
+  &:hover, &:active:hover {
+    background-color: darken($brand-orange, 20%);
     color: white;
   }
 }

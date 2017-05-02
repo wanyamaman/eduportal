@@ -4,7 +4,8 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
+    # Lists paginated and filtered schools
+    @schools = School.index_query(params)
   end
 
   # GET /schools/1

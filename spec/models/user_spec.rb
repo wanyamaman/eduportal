@@ -22,9 +22,22 @@ describe User do
     expect(@user.email).to match 'user@example.com'
   end
 
-  it "sets a default role of 'staff'" do
+  it "should set a default role of 'staff'" do
     user = FactoryGirl.create(:user)
     expect(user.role).to eq "staff"
+  end
+
+  it "should only allow admins and moderators to be editors" do
+    expect(@user.editor?).to be false
+
+    admin = @user.dup
+    mod = @user.dup
+
+    admin.update(role: :admin)
+    mod.update(role: :moderator)
+
+    expect(admin.editor?).to be true
+    expect(mod.editor?).to be true
   end
 
 

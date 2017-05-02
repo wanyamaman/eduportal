@@ -58,29 +58,40 @@ RSpec.describe School, type: :model do
   end
 
   it "lists an array of ownership options" do
-    ownerships = [['private', 'private'], ['public', 'public']]
+    ownerships = [["any", ""], ['private', 'private'], ['public', 'public']]
 
     expect(School.ownership_options).to eq(ownerships)
   end
 
   it "lists an array of level options" do
-    levels = [['primary', 'primary'], ['secondary', 'secondary'],
-              ['pre-school', 'pre-school'], ['all', 'all'],
-              ['other', 'other']]
+    levels = [["any", ""], ['primary', 'primary'], ['secondary', 'secondary'],
+              ['pre-school', 'pre-school'], ['all', 'all'], ['other', 'other']]
 
     expect(School.level_options).to eq(levels)
   end
 
   it "lists an array of gender options" do
-    genders = [['male', 'male'], ['female', 'female'], ['mixed', 'mixed']]
+    genders = [["any", ""], ['male', 'male'], ['female', 'female'],
+                ['mixed', 'mixed']]
 
     expect(School.gender_options).to eq(genders)
   end
 
   it "lists an array of mode options" do
-    modes = [['day', 'day'], ['boarding', 'boarding'], ['mixed', 'mixed'],
-              ['other', 'other']]
+    modes = [["any", ""], ['day', 'day'], ['boarding', 'boarding'],
+              ['mixed', 'mixed'], ['other', 'other']]
 
     expect(School.mode_options).to eq(modes)
+  end
+
+  it "lists schools according to search filters" do
+    @school.save
+    @jms = FactoryGirl.create(:jms)
+
+    query = School.index_query({"level" => "all"})
+
+    expect(query.first.id).to eq(@jms.id)
+    expect(query.count).to eq(1)
+    expect(School.index_query({}).count).to eq(2)
   end
 end
