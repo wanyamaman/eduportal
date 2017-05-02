@@ -80,9 +80,7 @@ pickle-email-*.html
 # Environment files that may contain sensitive data
 .env
 .powenv
+.rbenv-vars
 
 # tilde files are usually backup files from a text editor
 *~
-
-# Ignore cloudinary configuration
-/config/cloudinary.yml
