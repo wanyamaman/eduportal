@@ -65,7 +65,7 @@ class School < ApplicationRecord
     end
 
     # Only return required fields for faster queries on heavy data sets
-    query.select(:id, :name, :about)
+    query.select(:id, :name, :about, :logo)
   end
 
 end
