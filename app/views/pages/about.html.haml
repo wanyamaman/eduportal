@@ -1,0 +1,52 @@
+- content_for :title do
+  About
+.center-block.content-padding
+  %h3 Learn More About Eduportal
+  %section.about.cushion
+    .col-md-8
+      %ul.nav.nav-pills.nav-justified
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#1b"} About Us
+        %li
+          %a{"data-toggle" => "tab", :href => "#2b"} Advertise With Us
+        %li
+          %a{"data-toggle" => "tab", :href => "#3b"} Contact Us
+      .tab-content.clearfix
+        #1b.tab-pane.active
+          %p Eduportal.co.ke is an online portal that provides a detailed list of schools and education institutes within Kenya.
+
+          %p The website allows registered schools a platform for them to provide information regarding their institution in a high level of detail.
+
+          %p This platform makes it convenient for parents and students looking to get information on potential schools by providing them a one stop platform where they can search through a list of the many registered schools based on their chosen preferences.
+
+          %p Additional functionality added to the website such as; an online store for school materials, chat rooms to discuss the latest trending topics in the education industry and even an application for job seekers to apply for vacancies within the market, makes Eduportal.co.ke the number one portal to go to for anyone interested in issues related to the Kenyan education industry.
+        #2b.tab-pane
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquam, iure. Numquam, reprehenderit. Ut molestiae impedit iure quam, aliquam quasi necessitatibus aliquid quae eos unde reprehenderit quos possimus sunt architecto!
+
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquam, iure. Numquam, reprehenderit. Ut molestiae impedit iure quam, aliquam quasi necessitatibus aliquid quae eos unde reprehenderit quos possimus sunt architecto!
+
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquam, iure. Numquam, reprehenderit. Ut molestiae impedit iure quam, aliquam quasi necessitatibus aliquid quae eos unde reprehenderit quos possimus sunt architecto!
+
+        #3b.tab-pane
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquam, iure. Numquam, reprehenderit. Ut molestiae impedit iure quam, aliquam quasi necessitatibus aliquid quae eos unde reprehenderit quos possimus sunt architecto!
+
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquam, iure. Numquam, reprehenderit. Ut molestiae impedit iure quam, aliquam quasi necessitatibus aliquid quae eos unde reprehenderit quos possimus sunt architecto!
+
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aliquam, iure. Numquam, reprehenderit. Ut molestiae impedit iure quam, aliquam quasi necessitatibus aliquid quae eos unde reprehenderit quos possimus sunt architecto!
+
+    .col-md-3
+      .box-content
+        %p For more information feel free to contact us on:
+        %table.table.table-condensed.table-responsive
+          %tr
+            %td
+              %abbr{:title => "Cellphone"}
+                = icon('phone')
+            %td
+              123456789
+          %tr
+            %td
+              %abbr{:title => "Email"}
+                = icon('envelope')
+            %td
+              inquiries@renstine.co.ke

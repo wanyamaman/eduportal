@@ -1,49 +1,59 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
-gem 'rails', '4.2.5.2'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
+ruby '2.3.3'
+
+gem 'active_link_to'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-will_paginate'
+gem 'carrierwave'
+gem 'cloudinary'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'geocoder'
 gem 'country_select', '~> 2.5', '>= 2.5.2'
-group :development, :test do
-  gem 'byebug'
-end
-group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
-gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '~> 4.2.0'
+gem 'font-awesome-sass', '~> 4.7.0'
+gem 'geocoder'
 gem 'haml-rails'
 gem 'high_voltage'
+gem 'jbuilder', '~> 2.0'
+gem 'jquery-rails', '~> 4.2'
+gem 'listen'
 gem 'mysql2', '~> 0.3.18'
+gem 'rails', '5.0.2'
+gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'turbolinks', '~> 5.0'
+gem 'uglifier', '~>3.0'
 gem 'unicorn'
 gem 'unicorn-rails'
+
 group :development do
   gem 'better_errors'
   gem 'html2haml'
-  gem 'hub', :require=>nil
-  gem 'quiet_assets'
-  gem 'rails_layout'
+  gem 'hub', require: nil
+  gem 'rails_layout', '~> 1.0.31'
+  gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'web-console', '~> 2.0'
 end
 group :development, :test do
+  gem 'byebug'
+  gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
-group :production do
-  gem 'rails_12factor'
-end
+
 group :test do
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'rake'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0'
+  gem 'simplecov'
+end
+
+group :production do
+  gem 'rails_12factor'
 end

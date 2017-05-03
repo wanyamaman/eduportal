@@ -1,32 +1,71 @@
-%h1 Listing schools
+- content_for :title do
+  Schools
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Phone
-      %th Email
-      %th Ownership
-      %th Level
-      %th Mode
-      %th Gender
-      %th About us
+.schools
+  %h1 Search for a school
+  %br/
+  / Filter options
+  .row
+    .col-md-12
+      = form_tag schools_path, method: "get", id: "school-search-form", class: "form-inline" do
+        .form-group
+          = label :ownership, "ownership", class: "block"
+          = select_tag :ownership, options_for_select(School.ownership_options, params[:ownership]), class: 'form-control search-select'
+        .form-group
+          = label :level, "level", class: "block"
+          = select_tag :level, options_for_select(School.level_options, params[:level]), class: 'form-control search-select'
+        .form-group
+          = label :mode, "mode", class: "block"
+          = select_tag :mode, options_for_select(School.mode_options, params[:mode]), class: 'form-control search-select'
+        .form-group
+          = label :gender, "gender", class: "block"
+          = select_tag :gender, options_for_select(School.gender_options, params[:gender]), class: 'form-control search-select'
+        .form-group
+          = label :search, "search", class: "invisible block"
+          = submit_tag "Search", name: nil, class: "btn btn-brand-primary text-center search-submit"
+  %br/
+  / Create a new school
+  - if current_user.try(:editor?)
+    .row
+      .col-md-8
+        = link_to 'Add New School', new_school_path, class: "btn btn-brand-primary"
+    %br/
+  .row
+    .col-md-12
+      %p
+        %em.text-muted Search Results
+  / List of schools
+  - unless @schools.blank?
+    .row
+      .col-md-9
+        - @schools.each do |school|
+          .index-card
+            %h4
+              = school.name
+            %hr/
+            .row
+              .col-md-4
+                = link_to cl_image_tag(school.logo_url ? school.logo_url : "edu-logo-red_ulebsf.png", width: "60%", alt: "#{school.name} logo"), school
+              .col-md-8
+                %p.text-xs-justify
+                  = truncate(school.about, length: 400)
+            .row
+              .col-md-12
+                %p
+                  - if user_signed_in?
+                    - if current_user.try(:editor?)
+                      = link_to "Edit School", edit_school_path(school), class: "btn btn-brand-secondary pull-right js-block-sm"
+                    - if current_user.try(:admin?)
+                      = link_to "Delete School", school, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-brand-primary pull-right js-block-sm"
+                  = link_to "View School Profile", school, class: "btn btn-brand-orange pull-right js-block-sm"
+  - else
+    / No schools in search
+    .row
+      .col-md-12
+        %h4 There are no schools matching your search. Please try again
+  .row
+    .col-md-9
+      .paginate.text-center
+        = will_paginate @schools
 
-  %tbody
-    - @schools.each do |school|
-      %tr
-        %td= school.name
-        %td= school.phone
-        %td= school.email
-        %td= school.ownership
-        %td= school.level
-        %td= school.mode
-        %td= school.gender
-        %td= school.about
-        %td= link_to 'Show', school
-        %td= link_to 'Edit', edit_school_path(school)
-        %td= link_to 'Destroy', school, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New School', new_school_path
+  %br

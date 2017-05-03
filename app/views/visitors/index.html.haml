@@ -1,0 +1,112 @@
+/ Image Background Page Header
+#carousel-home.banner.carousel.slide{ 'data-ride' => 'carousel' }
+  %ol.carousel-indicators
+    %li.active{ 'data-target' => '#carousel-home', 'data-slide-to' => "0" }
+    %li{ 'data-target' => '#carousel-home', 'data-slide-to' => "1" }
+    %li{ 'data-target' => '#carousel-home', 'data-slide-to' => "2" }
+    %li{ 'data-target' => '#carousel-home', 'data-slide-to' => "3" }
+
+  .carousel-inner{ 'role' => 'listbox' }
+    .item.active
+      = image_tag 'home/slider/MAIN-SLIDER-1.jpg', alt: 'Call to action to join Eduportal'
+    .item
+      = image_tag 'home/slider/MAIN-SLIDER-2.jpg', alt: 'Student with laptop'
+    .item
+      = image_tag 'home/slider/MAIN-SLIDER-3.jpg', alt: 'Services available on Eduportal'
+    .item
+      = image_tag 'home/slider/MAIN-SLIDER-4.jpg', alt: 'Student with tablet'
+
+  %a{ href: '#carousel-home', role: 'button', 'data-slide' => 'prev', class: 'left carousel-control' }
+    %span.glyphicon.glyphicon-chevron-left{ 'aria-hidden' => 'true' }
+    %span.sr-only Previous
+  %a{ href: '#carousel-home', role: 'button', 'data-slide' => 'next', class: 'right carousel-control' }
+    %span.glyphicon.glyphicon-chevron-right{ 'aria-hidden' => 'true' }
+    %span.sr-only Next
+
+/ Page Content
+%br
+.container
+  %section.home
+    .col-xs-12.text-center
+      %h3 Our Latest Updates
+      %p Our Database keeps growing larger everyday, see below for some of our most popular and latest uploads
+      %br/
+    .col-xs-12
+      .row.row-eq-height
+        .col-md-6.col-lg-3
+          .card-update
+            %h5 Latest Schools
+            = image_tag 'home/update-school.jpg', class: 'img-responsive'
+            %h5 Browse Best Schools
+            %p.text-xs-justify Click below to see a list of some of the best schools, around your neighborhood, in your county and across Kenya.
+            = link_to 'View Schools', schools_path, class: 'btn'
+        .col-md-6.col-lg-3
+          .card-update
+            %h5 Latest Events
+            = image_tag 'home/update-event.png', class: 'img-responsive'
+            %h5 Stay Updated
+            %p.text-xs-justify Visit our Calendar page to find out the latest sports, cultural and administrative events related to your school of interest.
+            = link_to 'Coming Soon', 'javascript:;', class: 'btn'
+        .col-md-6.col-lg-3
+          .card-update
+            %h5 Latest Products
+            = image_tag 'home/update-products.jpg', class: 'img-responsive'
+            %h5 Shop Till You Drop!
+            %p.text-xs-justify Our online classified lists a wide selection of uniforms, stationeries and many more services & products at the best prices in town.
+            = link_to 'Coming Soon', 'javascript:;', class: 'btn'
+        .col-md-6.col-lg-3
+          .card-update
+            %h5 Latest Jobs
+            = image_tag 'home/update-jobs.jpg', class: 'img-responsive'
+            %h5 Career Opportunities
+            %p.text-xs-justify Are you a Teacher, School Bus driver, Cook or Cleaner? Browse through our Jobs listing to find current job vacancies in the schools near you.
+            = link_to 'Coming Soon', 'javascript:;', class: 'btn'
+
+.bg-brand-primary
+  .container
+    %section.home
+      %h3.text-center.text-white Visit Our Blog For The Latest News
+      .row.row-eq-height
+        .col-xs-12.col-md-4
+          .card-update
+            %ul.list-unstyled.list-inline
+              %li
+                %h3.circled 01
+              %li
+                %h5 Keep off personal affairs union tells TSC
+            %p.text-xs-justify The Kenya National Union of Teachers has criticised the new code of regulations being drafted by the Teachers Service Commission, and accused it of interfering in their private lives.
+            = link_to 'Read More', 'javascript:;', class: 'btn'
+        .col-xs-12.col-md-4
+          .card-update
+            %ul.list-unstyled.list-inline
+              %li
+                %h3.circled 02
+              %li
+                %h5 Security for teachers during Saba Saba
+            %p.text-xs-justify Kuppet Secretary-General Akello Misori wants security reinforced for teachers. Mr Misori said teachers must be protected from people who may be planning chaos.
+            = link_to 'Read More', 'javascript:;', class: 'btn'
+        .col-xs-12.col-md-4
+          .card-update
+            %ul.list-unstyled.list-inline
+              %li
+                %h3.circled 03
+              %li
+                %h5 No to condoms in schools
+            %p.text-xs-justify Leaders of a women’s organisation in West Pokot have threatened to s
+            = link_to 'Read More', 'javascript:;', class: 'btn'
+
+.container
+  %section.home
+    .col-sm-12.text-center
+      %h3 Visit Our Youtube Channel
+      %br/
+    .col-md-6.text-center
+      .embed-responsive.embed-responsive-16by9
+        = youtube_tag 'https://www.youtube.com/embed/kPDnw3_1GOI', classes: 'embed-responsive-item'
+      %br/
+      %p Welcome to the best online schools' directory in Kenya
+    .col-md-6.text-center
+      .embed-responsive.embed-responsive-16by9
+        = youtube_tag 'https://www.youtube.com/embed/PBXS0f7GqA0?rel=0', classes: 'embed-responsive-item'
+      %br/
+      %p Why you need to checkout our site

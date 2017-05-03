@@ -1,3 +1,43 @@
-// Place all the styles related to the Schools controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Search filters
+.search-select {
+  width: 120px !important;
+  background-color: $brand-orange;
+  color: white;
+}
+
+.search-submit {
+  width: 120px;
+}
+
+// School tile
+.index-card {
+  padding: 7px 10px 7px 10px;
+  color: #595858;
+  font-weight: normal;
+  font-size: 20px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  float: left;
+  position: relative;
+  background: #F7F9FA;
+  border: solid 1px rgba(214,214,214,0.5);
+  a:visited {
+    color: white;
+  }
+}
+
+/* RESPONSIVENESS */
+
+@media (max-width: $screen-md-min) {
+  .index-card > h4 {
+    text-align: center;
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .js-block-sm {
+    width: 100%;
+    display: block;
+  }
+}

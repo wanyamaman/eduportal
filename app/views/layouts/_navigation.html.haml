@@ -1,13 +1,19 @@
--# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container
+- if current_page? root_path
+  .container.hidden-xs
+    .navbar-logo
+  %nav.nav-upper
+    .container
+      %ul.nav.navbar-upper
+        = render 'layouts/nav_links_for_auth'
+
+%nav.navbar.navbar-static-top.navbar-lower
+  .container{class: ("bg-brand-primary" unless current_page? root_path)}
     .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %button{ type: 'button', 'data-toggle' => 'collapse', 'data-target' => '#navbar', 'aria-expanded' => 'false', class: 'navbar-toggle collapsed'}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
+    .collapse.navbar-collapse#navbar.text-xs-right
+      %ul.nav.navbar-nav.navbar-right
         = render 'layouts/navigation_links'

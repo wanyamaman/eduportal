@@ -1,0 +1,38 @@
+.footer-inner
+  .container
+    .row
+      .col-md-4
+        %small We are Kenya's best online School directory
+        %br
+        %small
+          %strong Main Menu
+        %br
+        %ul.list-inline
+          %li.link
+            %small= link_to 'Home', root_path
+          %li.link
+            %small= link_to 'Schools', schools_path
+          %li.link
+            %small= link_to 'Contact Us', page_path('contact')
+          %li.link
+            %small= link_to 'About Us', page_path('about')
+        %small
+          %strong Contact Us
+        %br
+        %small Email: inquiries@eduportal.co.ke | Cell: 070707070
+      %br.visible-xs-block
+      .col-xs-12.col-md-4.pull-right
+        %small Follow Eduportal on social media
+        %ul.list-unstyled
+          %li= link_to icon("facebook-square", "facebook"), '#',class: "no-underline"
+          %li= link_to icon("twitter-square", "twitter"), '#', class: "no-underline"
+          %li= link_to icon("youtube-square", "Youtube"), '#', class: "no-underline"
+          %li= link_to icon("google-plus-square", "google+"), '#', class: "no-underline"
+.footer-bottom
+  .container
+    .row
+      .col-md-12.text-xs-center.text-md-left
+        %small
+          &copy;
+          = Date.today.year
+          Renstine Multimedia. All rights reserved.
