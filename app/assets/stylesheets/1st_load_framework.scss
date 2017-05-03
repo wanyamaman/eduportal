@@ -38,11 +38,6 @@ img {
 main {
   @extend .container;
   width: 100%;
-  a {
-    &:visited {
-      color: white;
-    }
-  }
 }
 section {
   @extend .row;

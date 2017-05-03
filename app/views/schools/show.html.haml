@@ -1,34 +1,5 @@
-%p#notice= notice
-
-%p
-  %b Name:
+%h1
   = @school.name
-%p
-  %b Phone:
-  = @school.phone
-%p
-  %b Email:
-  = @school.email
-%p
-  %b Ownership:
-  = @school.ownership
-%p
-  %b Level:
-  = @school.level
-%p
-  %b Mode:
-  = @school.mode
-%p
-  %b Gender:
-  = @school.gender
-%p
-  %b About us:
-  = @school.about
-- unless @school.logo_url.nil?
-  %p
-    %b Logo
-    = image_tag @school.logo_url
 
-= link_to 'Edit', edit_school_path(@school)
-\|
-= link_to 'Back', schools_path
+.coming-soon
+  %h1 Coming Soon
