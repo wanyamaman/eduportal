@@ -22,8 +22,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'turbolinks', '~> 5.0'
 gem 'uglifier', '~>3.0'
-gem 'unicorn'
-gem 'unicorn-rails'
+gem 'puma'
 
 group :development do
   gem 'better_errors'
