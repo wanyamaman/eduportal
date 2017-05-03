@@ -1,7 +1,7 @@
 # Feature: Navigation links
 #   As a visitor
 #   I want to see navigation links
-#   So I can find home, schools, about, blog or contact, and basic logging pages
+#   So I can find home, schools, about or contact, and basic logging pages
 feature 'Navigation links', :devise do
 
   # Scenario: View navigation links
@@ -10,12 +10,12 @@ feature 'Navigation links', :devise do
   #   Then I see "home," "Log in," and "Register"
   scenario 'view navigation links' do
     visit root_path
-    expect(page).to have_link 'Home'
+    expect(page).to have_link 'Home', count: 2
     expect(page).to have_link 'Log in'
     expect(page).to have_link 'Register'
-    expect(page).to have_link 'Blog'
-    expect(page).to have_link 'About Us'
-    expect(page).to have_link 'Contact Us'
+    expect(page).to have_link 'Schools'
+    expect(page).to have_link 'About Us', count: 2
+    expect(page).to have_link 'Contact Us', count: 2
   end
 
   # Scenario: Visit About page
@@ -37,5 +37,16 @@ feature 'Navigation links', :devise do
     click_link('Contact Us', match: :first)
     expect(page).to have_current_path(page_path('contact'))
   end
+
+  # Scenario: Visit School page
+  # Given I am a visitor
+  # When I click on "Schools" link
+  # Then I visit the Schools listing page
+  scenario 'visit schools page' do
+    visit root_path
+    click_link('Schools', match: :first)
+    expect(page).to have_current_path(schools_path)
+  end
+
 
 end

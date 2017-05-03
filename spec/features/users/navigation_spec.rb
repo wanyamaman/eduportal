@@ -17,7 +17,6 @@ feature 'Navigation links', :devise do
     expect(page).to_not have_link 'users'
     expect(page).to have_link 'Home'
     expect(page).to have_link 'Schools'
-    expect(page).to have_link 'Blog'
     expect(page).to have_link 'About Us'
     expect(page).to have_link 'Contact Us'
   end
