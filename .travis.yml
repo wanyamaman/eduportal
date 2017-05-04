@@ -4,9 +4,9 @@ rvm:
 script: xvfb-run -a bundle exec rspec
 bundler_args: --without production
 services:
-  - mysql
-before_install:
-  - mysql -e 'CREATE DATABASE eduportal_test;'
+  - postgresql
+before_script:
+  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
 addons:
   code_climate:
     repo_token:
