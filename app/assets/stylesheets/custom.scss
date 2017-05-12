@@ -118,10 +118,13 @@ hr {
 
 .nav-pills {
   li {
-    background-color: $brand-red;
     color: white;
     border: 1px solid white;
     border-radius: 4px 4px 0 0;
+
+    &:not(.active) {
+      background-color: $brand-red;
+    }
 
     &.active {
       a {

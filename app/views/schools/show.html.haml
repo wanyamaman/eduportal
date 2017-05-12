@@ -4,14 +4,22 @@
 %h1
   = @school.name
 
+- if user_signed_in?
+  %div.text-right
+    - if current_user.try(:editor?)
+      = link_to "Edit School", edit_school_path(@school), class: "btn btn-brand-secondary js-block-sm"
+    - if current_user.try(:admin?)
+      = link_to "Delete School", @school, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-brand-primary js-block-sm"
+  %br/
+
 #school
-  .row
+  .row.row-eq-height
     .col-md-8
       #banner
-        = image_tag "dummy/banner.jpg", size: "750x422", class: 'img-responsive'
+        = cl_image_tag(@school.banner_url ? @school.banner_url : "banner_o3z9dd.jpg", alt: "#{@school.name} banner", height: 460, width: 750, crop: "fill", class: "img-responsive")
     .col-md-4
       #contact
-        = cl_image_tag(@school.logo_url ? @school.logo_url : "edu-logo-red_ulebsf.png", alt: "#{@school.name} logo")
+        = cl_image_tag(@school.logo_url ? @school.logo_url : "edu-logo-red_ulebsf.png", alt: "#{@school.name} logo", height: 320, width: 290, crop: "fill", class: "img-responsive")
         %h4.text-orange Contact Details
         %p Postal Address: PO Box 1234
         %p Physical Address: school name, road
@@ -55,6 +63,8 @@
           %br/
           .text-right
             = submit_tag "Search", name: nil, class: "btn btn-brand-orange text-center search-submit"
-  %h4.text-orange.display-inline Our Location
-  %hr.display-inline/
-  #map
+  %br/
+  - if @school.try(:location)
+    %h4.text-orange.display-inline Our Location
+    %hr.display-inline/
+    #map

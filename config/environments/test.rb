@@ -39,4 +39,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  CarrierWave.configure do |car_config|
+    car_config.storage = :file
+    car_config.enable_processing = false
+  end
 end

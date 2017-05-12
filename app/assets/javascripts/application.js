@@ -37,6 +37,7 @@ $(document).on('turbolinks:load', function(){
       matchedHeight = h > matchedHeight ? h : matchedHeight;
     });
     $(".matched-height").outerHeight(matchedHeight);
+    $("#info .tab-content").height(matchedHeight);
 
   }
 });

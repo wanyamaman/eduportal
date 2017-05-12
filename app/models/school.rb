@@ -4,6 +4,7 @@ class School < ApplicationRecord
 
   # School images
   mount_uploader :logo, LogoUploader
+  mount_uploader :banner, BannerUploader
 
   # School types
   @@ownership_type = %w(private public)

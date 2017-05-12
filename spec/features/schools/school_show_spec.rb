@@ -4,7 +4,7 @@
 #   So I can view general information about the school
 feature 'School show' do
   before(:each) do
-    @jms = FactoryGirl.create(:jms, :with_logo)
+    @jms = FactoryGirl.create(:jms, :with_logo, :with_banner)
   end
 
   # Scenario: Visit a "school's" page
