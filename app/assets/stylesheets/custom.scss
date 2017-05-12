@@ -3,10 +3,12 @@
 .bg-brand-primary { background-color: $brand-red; }
 .bg-brand-secondary { background-color: $brand-yellow; }
 .bg-transparent { background-color: transparent !important; }
+.bg-white { background-color: white; }
 
 .text-primary { color: $brand-red !important; }
 .text-secondary { color: $brand-yellow !important; }
 .text-white { color: white; }
+.text-orange { color: $brand-orange; }
 
 /* Text */
 
@@ -23,117 +25,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $brand-red;
   font-weight: bold;
-}
 
-/* NAVIGATION */
-
-.navbar {
-  margin-bottom: 0;
-}
-
-.navbar-toggle {
-  border-color: white;
-  .icon-bar {
-    background-color: white;
+  &.display-inline {
+    display: inline-block;
   }
-}
-
-// Upper
-.nav-upper {
-  background-color: $brand-red;
-  ul {
-    float: right;
-    display: table;
-  }
-  .navbar-upper > li > a {
-    color: white;
-    &:hover {
-      background: transparent;
-      color: black;
-    }
-    &:focus {
-      background-color: transparent !important;
-    }
-  }
-  .navbar-upper > li {
-    display: table-cell;
-    font-size: 12px;
-  }
-}
-
-// Default lower
-.navbar-lower {
-  background: $brand-yellow;
-  li {
-    color: white;
-    border-bottom: 2px solid transparent;
-    &:hover {
-      border-bottom: 2px solid black;
-    }
-  }
-  ul > li > a {
-    color: inherit;
-    &:hover {
-      background: transparent;
-      color: black;
-    }
-    &:focus {
-      background-color: transparent !important;
-    }
-  }
-}
-
-.nav-active {
-  color: black;
-  pointer-events: none;
-  cursor: default;
-  border-bottom: none;
-}
-
-/* LOGO */
-
-.navbar-logo {
-  background-image: image-url('top-menu-logo.png');
-  width: 133px;
-  height: 213px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 5px;
-  z-index: 1051;
-}
-
-/* FOOTER */
-
-footer {
-  background-color: $grey-washed;
-  p, small {
-    color: $gray-light;
-  }
-  a {
-    text-decoration: none;
-    color: $gray-light;
-  }
-  .list-inline {
-    padding-left: 6px;
-  }
-  ul {
-    margin-top: 2px;
-    margin-bottom: 5px;
-  }
-  li.link {
-    border-left: 1px solid $gray-light;
-  }
-}
-
-.footer-inner {
-  padding: 30px 0;
-}
-
-.footer-bottom {
-  background-color: $grey-dark;
-  padding: 10px 0;
 }
 
 /* COMMON STYLES */
@@ -165,18 +60,22 @@ footer {
     border-top: none;
   }
 
-  .nav-pills > li > a {
-    border-radius: 4px 4px 0 0 ;
-    &:hover {
-      color: $gray;
-    }
-  }
   a > .fa {
     color: $gray-light;
     &:hover {
       background: transparent;
       color: $grey-dark;
     }
+  }
+}
+
+hr {
+  border-top: 1px solid #ddd;
+  &.display-inline {
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    width: 90%;
   }
 }
 
@@ -212,5 +111,34 @@ footer {
   h1 {
     font-size: 50px;
     color: black;
+  }
+}
+
+/* NAV PILLS */
+
+.nav-pills {
+  li {
+    background-color: $brand-red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px 4px 0 0;
+
+    &.active {
+      a {
+        background-color: $brand-orange;
+        color: white;
+        &:hover, &:focus {
+          background-color: $brand-orange;
+          color: white;
+        }
+      }
+    }
+    a {
+      color: white;
+      &:hover {
+        background-color: $brand-orange;
+        color: black;
+      }
+    }
   }
 }

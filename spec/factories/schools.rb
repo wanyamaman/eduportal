@@ -19,6 +19,7 @@ FactoryGirl.define do
       name "JMS"
       email "jms@jmshigh.bw"
       level "all"
+      news "JMS Fire win the Francistown soccer world cup!"
     end
   end
 

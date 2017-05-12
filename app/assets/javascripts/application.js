@@ -27,4 +27,16 @@ $(document).on('turbolinks:load', function(){
   });
   $(".tab-content .tab-pane:first").addClass("active");
   $(".tab-content").height(maxHeight);
+
+  // Sets equal column heights for school search and info panel
+  // Only applies on medium and large screens
+  if ($(window).width() >= 768) {
+    var matchedHeight = 0;
+    $(".matched-height").each(function(){
+      var h = $(this).height();
+      matchedHeight = h > matchedHeight ? h : matchedHeight;
+    });
+    $(".matched-height").outerHeight(matchedHeight);
+
+  }
 });

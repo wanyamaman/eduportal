@@ -84,14 +84,27 @@ RSpec.describe School, type: :model do
     expect(School.mode_options).to eq(modes)
   end
 
+  it "lists a filtered array of info options" do
+    @jms = FactoryGirl.create(:jms)
+    info = ["about", "news"]
+
+    expect(@jms.info_options).to eq(info)
+  end
+
   it "lists schools according to search filters" do
     @school.save
     @jms = FactoryGirl.create(:jms)
 
+    # Search by types
     query = School.index_query({"level" => "all"})
 
     expect(query.first.id).to eq(@jms.id)
     expect(query.count).to eq(1)
     expect(School.index_query({}).count).to eq(2)
+
+    # Search by #caseInsensitive name
+    query = School.index_query({name: "test school"})
+
+    expect(query.first.id).to eq(@school.id)
   end
 end

@@ -1,5 +1,60 @@
+- content_for :title do
+  = @school.name
+
 %h1
   = @school.name
 
-.coming-soon
-  %h1 Coming Soon
+#school
+  .row
+    .col-md-8
+      #banner
+        = image_tag "dummy/banner.jpg", size: "750x422", class: 'img-responsive'
+    .col-md-4
+      #contact
+        = cl_image_tag(@school.logo_url ? @school.logo_url : "edu-logo-red_ulebsf.png", alt: "#{@school.name} logo")
+        %h4.text-orange Contact Details
+        %p Postal Address: PO Box 1234
+        %p Physical Address: school name, road
+        %p Nearest G5 Depot: Depot x
+  %hr/
+  .row
+    .col-md-8
+      #info.bg-white.matched-height
+        %ul.nav.nav-pills
+          - @school.info_options.each do |title|
+            %li{class: ("active" if title == "about")}
+              %a{"data-toggle": "tab", href:"##{title}"}= title.humanize
+        %hr/
+        .tab-content.clearfix
+          - @school.info_options.each do |title|
+            .tab-pane{id: "#{title}", class: ("active" if title == "about")}
+              %p= @school.read_attribute(title)
+    .col-md-4.matched-height
+      #search
+        = form_tag schools_path, method: "get", id: "school_search_sidebar" do
+          .form-group
+            = label :school, :name do
+              %h4.text-white Search for a School
+            .input-group
+              = text_field :school, :name, value: nil, name: "name", class: "form-control input-sm", placeholder: "Search"
+              .input-group-addon
+                %span.glyphicon.glyphicon-search{"aria-hidden": true}
+          %br/
+          .form-group
+            = label :ownership, "ownership"
+            = select_tag :ownership, options_for_select(School.ownership_options, params[:ownership]), class: 'form-control search-select pull-right input-sm'
+          .form-group
+            = label :level, "level"
+            = select_tag :level, options_for_select(School.level_options, params[:level]), class: 'form-control search-select pull-right input-sm'
+          .form-group
+            = label :mode, "mode"
+            = select_tag :mode, options_for_select(School.mode_options, params[:mode]), class: 'form-control search-select pull-right input-sm'
+          .form-group
+            = label :gender, "gender"
+            = select_tag :gender, options_for_select(School.gender_options, params[:gender]), class: 'form-control search-select pull-right input-sm'
+          %br/
+          .text-right
+            = submit_tag "Search", name: nil, class: "btn btn-brand-orange text-center search-submit"
+  %h4.text-orange.display-inline Our Location
+  %hr.display-inline/
+  #map

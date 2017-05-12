@@ -2,12 +2,17 @@ class School < ApplicationRecord
 
   # belongs_to :locations
 
+  # School images
   mount_uploader :logo, LogoUploader
 
+  # School types
   @@ownership_type = %w(private public)
   @@level_type = %w(primary secondary pre-school all other)
   @@mode_type = %w(day boarding mixed other)
   @@gender_type = %w(male female mixed)
+
+  # School information panels
+  @@info_type = %w(about news faculties staff academics contact_us)
 
   validates :name, presence: true, length: 3..255
   validates :email, length: 5..100, format: EMAIL_REGEX, allow_blank: true
@@ -26,7 +31,7 @@ class School < ApplicationRecord
             length: {maximum:50}
   validates :about, presence: true
 
-  # School options
+  # School type options
   def self.ownership_options
     @@ownership_type.map { |o| [o,o] }.unshift(["any", "" ])
   end
@@ -41,6 +46,12 @@ class School < ApplicationRecord
 
   def self.gender_options
     @@gender_type.map { |g| [g,g] }.unshift(["any", "" ])
+  end
+
+  # School info options
+  def info_options
+    # Return only info types with content
+    @@info_type.select { |info_attr| self.send("#{info_attr}?") }
   end
 
   # Conditionally build a search query based on school options
@@ -63,6 +74,9 @@ class School < ApplicationRecord
       # Return paginated results of all schools
       query = paginate(page: params[:page])
     end
+
+    # Search for schools by name
+    query = query.where("name ILIKE ?", "%#{params[:name]}%") unless params[:name].blank?
 
     # Only return required fields for faster queries on heavy data sets
     query.select(:id, :name, :about, :logo)

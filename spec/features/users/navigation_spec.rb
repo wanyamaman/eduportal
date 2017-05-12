@@ -22,9 +22,9 @@ feature 'Navigation links', :devise do
   end
 
   # Scenario: View navigation links
-  # Given I am signed in as admin
-  # When I visit the home page
-  #  Then I see "users"
+  #   Given I am signed in as admin
+  #   When I visit the home page
+  #   Then I see "users"
   scenario 'view navigation links as admin' do
     admin = FactoryGirl.create(:user, :admin)
     signin(admin.email, admin.password)
