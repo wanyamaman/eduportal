@@ -23,6 +23,11 @@
       = image_tag(@school.logo_url) if @school.logo?
       = f.file_field :logo
       = f.hidden_field :logo_cache
+    .form-group
+      = f.label :banner
+      = image_tag(@school.banner_url) if @school.banner?
+      = f.hidden_field :banner_cache
+      = f.file_field :banner
 
   .form-actions
     = f.button :submit, class: 'btn btn-brand-secondary'

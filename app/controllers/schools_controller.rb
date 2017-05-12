@@ -72,7 +72,7 @@ class SchoolsController < ApplicationController
     def school_params
       params.require(:school).permit(:name, :phone, :email, :ownership,
                                      :level, :mode, :gender, :about, :logo,
-                                     :news, :staff, :faculties, :academics,
-                                     :contact_us)
+                                     :banner, :news, :staff, :faculties,
+                                     :academics, :contact_us)
     end
 end

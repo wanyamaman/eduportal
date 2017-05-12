@@ -15,10 +15,16 @@ FactoryGirl.define do
             File.join(Rails.root, '/spec/support/files/logo.jpg')))
     end
 
+    trait :with_banner do
+      banner Rack::Test::UploadedFile.new(File.open(
+                File.join(Rails.root, '/spec/support/files/banner.jpg')))
+    end
+
     factory :jms do
       name "JMS"
       email "jms@jmshigh.bw"
       level "all"
+      news "JMS Fire win the Francistown soccer world cup!"
     end
   end
 

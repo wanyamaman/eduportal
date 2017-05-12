@@ -1,6 +1,6 @@
 # Feature: School listing
 #   As a user/visitor
-#   I want to visit an 'schools' page
+#   I want to visit a 'schools' page
 #   So I can view a list of schools
 feature 'Schools index' do
 
