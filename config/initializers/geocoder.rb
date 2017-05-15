@@ -1,7 +1,7 @@
 Geocoder.configure(
   :units => :km,
   :cache => Rails.cache,
-  :lookup => :test
+  :lookup => Rails.env.test? ? :test : :google
 )
 
 Geocoder::Lookup::Test.add_stub(
