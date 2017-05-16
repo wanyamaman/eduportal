@@ -1,5 +1,9 @@
 %h1 New state
 
-= render 'form'
+.row
+  = render 'form'
 
-= link_to 'Back', states_path
+%br/
+.row
+  .col-md-6
+    = link_to 'Back', states_path, class: "btn btn-default btn-sm"

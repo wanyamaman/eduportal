@@ -19,8 +19,13 @@ modes = ['day', 'boarding', 'mixed']
 schools = []
 
 
-# states = []
 # locations = []
+
+# Create states
+5.times do
+  State.create(name: Faker::Address.state)
+end
+
 
 # Create schools
 school_names.each { |school|

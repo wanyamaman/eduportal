@@ -1,4 +1,4 @@
-# Feature: School listing
+# Feature: School profile page
 #   As a user/visitor
 #   I want to visit a specific "school's" page
 #   So I can view general information about the school

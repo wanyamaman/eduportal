@@ -1,8 +1,8 @@
-= simple_form_for(@state) do |f|
+= simple_form_for @state, html: { class: 'form' } do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: "btn btn-success"

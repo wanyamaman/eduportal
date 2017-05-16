@@ -1,21 +1,26 @@
-%h1 Listing states
+%h1
+  Listing states &nbsp;
+  - if current_user.try(:admin?)
+    %span
+      = link_to 'New State', new_state_path, class: "btn btn-success btn-sm"
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @states.each do |state|
+.table-responsive
+  %table.table.table.condensed
+    %thead
       %tr
-        %td= state.name
-        %td= link_to 'Show', state
-        %td= link_to 'Edit', edit_state_path(state)
-        %td= link_to 'Destroy', state, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Name
+        %th
+        - if current_user.try(:admin?)
+          %th
+          %th
+
+    %tbody
+      - @states.each do |state|
+        %tr
+          %td= state.name
+          %td= link_to 'Show', state, class: "btn btn-sm btn-brand-orange btn-block"
+          - if current_user.try(:admin?)
+            %td= link_to 'Edit', edit_state_path(state), class: "btn btn-sm btn-brand-secondary btn-block"
+            %td= link_to 'Destroy', state, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-sm btn-brand-primary btn-block"
 
 %br
-
-= link_to 'New State', new_state_path

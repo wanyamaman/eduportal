@@ -1,7 +1,10 @@
 %h1 Editing state
 
-= render 'form'
+.row
+  = render 'form'
 
-= link_to 'Show', @state
-\|
-= link_to 'Back', states_path
+%br/
+.row
+  .col-md-6
+    = link_to 'Show', @state, class: "btn btn-sm btn-brand-orange"
+    = link_to 'Back', states_path, class: "btn btn-default btn-sm"
