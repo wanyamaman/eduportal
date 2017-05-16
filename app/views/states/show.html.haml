@@ -1,9 +1,7 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h1 State:
+%div
   = @state.name
-
-= link_to 'Edit', edit_state_path(@state)
-\|
-= link_to 'Back', states_path
+  = link_to 'Edit', edit_state_path(@state), class: "btn btn-brand-secondary btn-sm"
+  = link_to 'Back', states_path, class: "btn btn-default btn-sm"

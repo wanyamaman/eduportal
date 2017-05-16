@@ -11,4 +11,18 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+  private
+    # Redirect non-editors to root page without warning unless.
+    def editor_only
+      unless current_user.editor?
+        redirect_to root_path, alert: "Access denied."
+      end
+    end
+
+    def admin_only
+      unless current_user.admin?
+        redirect_back fallback_location: root_path, :alert => "Access denied."
+      end
+    end
+
 end

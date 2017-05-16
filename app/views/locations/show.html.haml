@@ -5,7 +5,7 @@
   = @location.city
 %p
   %b County:
-  = @location.state
+  = @location.state.name
 %p
   %b Country:
   = @location.country
@@ -19,6 +19,5 @@
   %b Longitude:
   = @location.longitude
 
-= link_to 'Edit', edit_location_path(@location)
-\|
-= link_to 'Back', locations_path
+= link_to 'Edit', edit_location_path(@location), class: "btn btn-brand-secondary btn-sm"
+= link_to 'Back', locations_path, class: "btn btn-default btn-sm"

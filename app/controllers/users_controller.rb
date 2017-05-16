@@ -32,12 +32,6 @@ class UsersController < ApplicationController
 
   private
 
-  def admin_only
-    unless current_user.admin?
-      redirect_back fallback_location: root_path, :alert => "Access denied."
-    end
-  end
-
   def secure_params
     params.require(:user).permit(:role)
   end

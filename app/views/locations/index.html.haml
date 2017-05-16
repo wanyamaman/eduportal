@@ -1,33 +1,38 @@
-%h1 Listing locations
+%h1
+  Listing locations &nbsp;
+  - if current_user.try(:admin?)
+    %span
+      = link_to 'New Location', new_location_path, class: "btn btn-xs btn-success btn-sm"
+%br/
 
-%table
-  %thead
-    %tr
-      %th Street
-      %th City
-      %th County
-      %th Country
-      %th Zip
-      %th Latitude
-      %th Longitude
-      %th
-      %th
-      %th
-
-  %tbody
-    - @locations.each do |location|
+.table-responsive
+  %table.table.table-condensed
+    %thead
       %tr
-        %td= location.street
-        %td= location.city
-        %td= location.state
-        %td= location.country
-        %td= location.zip
-        %td= location.latitude
-        %td= location.longitude
-        %td= link_to 'Show', location
-        %td= link_to 'Edit', edit_location_path(location)
-        %td= link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Street
+        %th City
+        %th County
+        %th Country
+        %th Zip
+        %th Latitude
+        %th Longitude
+        %th
+        - if current_user.try(:admin?)
+          %th
+          %th
 
-%br
-
-= link_to 'New Location', new_location_path
+    %tbody
+      - @locations.each do |location|
+        %tr
+          %td= location.street
+          %td= location.city
+          - if location.state
+            %td= location.state.name
+          %td= location.country
+          %td= location.zip
+          %td= location.latitude
+          %td= location.longitude
+          %td= link_to 'Show', location, class: "btn btn-xs btn-brand-orange btn-block"
+          - if current_user.try(:admin?)
+            %td= link_to 'Edit', edit_location_path(location), class: "btn btn-xs btn-brand-secondary btn-block"
+            %td= link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-xs btn-brand-primary btn-block"

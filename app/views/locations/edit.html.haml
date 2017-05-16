@@ -1,7 +1,11 @@
 %h1 Editing location
 
-= render 'form'
+.row
+  = render 'form'
 
-= link_to 'Show', @location
-\|
-= link_to 'Back', locations_path
+%br/
+.row
+  .col-md-6
+    = link_to 'Show', @location, class: "btn btn-sm btn-brand-orange"
+    = link_to 'Back', locations_path, class: "btn btn-default btn-sm"
+
