@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     # Redirect non-editors to root page without warning unless.
     def editor_only
       unless current_user.editor?
-        redirect_to root_path
+        redirect_to root_path, alert: "Access denied."
       end
     end
 
