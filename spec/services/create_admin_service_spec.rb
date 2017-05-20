@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe CreateAdminService do
-
   it "should create a valid admin" do
     user = CreateAdminService.new.call
 
@@ -20,5 +19,4 @@ describe CreateAdminService do
       CreateAdminService.new.call
     }.to raise_error(ActiveRecord::RecordInvalid)
   end
-
 end
