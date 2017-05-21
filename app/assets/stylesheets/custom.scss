@@ -20,6 +20,9 @@ html {
 body {
   font-family: 'cronos-display', 'sans-serif';
   font-size: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,6 +32,10 @@ h1, h2, h3, h4, h5, h6 {
   &.display-inline {
     display: inline-block;
   }
+}
+
+.container {
+  flex: 1;
 }
 
 /* COMMON STYLES */

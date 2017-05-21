@@ -38,6 +38,9 @@ img {
 main {
   @extend .container;
   width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 section {
   @extend .row;
