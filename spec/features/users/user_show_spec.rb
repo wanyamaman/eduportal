@@ -5,22 +5,22 @@ Warden.test_mode!
 #   As a user
 #   I want to visit my user profile page
 #   So I can see my personal account data
-feature 'User profile page', :devise do
-
+feature "User profile page", :devise do
   after(:each) do
     Warden.test_reset!
   end
+  let(:me) { FactoryGirl.create(:user) }
 
   # Scenario: User sees own profile
   #   Given I am signed in
   #   When I visit the user profile page
   #   Then I see my own email address
-  scenario 'user sees own profile' do
-    user = FactoryGirl.create(:user)
-    login_as(user, :scope => :user)
-    visit user_path(user)
+  scenario "user sees own profile" do
+    login_as(me, scope: :user)
+    visit user_path(me)
+
     expect(page).to have_content 'User'
-    expect(page).to have_content user.email
+    expect(page).to have_content me.email
   end
 
   # Scenario: User cannot see another user's profile
@@ -28,12 +28,11 @@ feature 'User profile page', :devise do
   #   When I visit another user's profile
   #   Then I see an 'access denied' message
   scenario "user cannot see another user's profile" do
-    me = FactoryGirl.create(:user)
     other = FactoryGirl.create(:user, email: 'other@example.com')
-    login_as(me, :scope => :user)
+    login_as(me, scope: :user)
     Capybara.current_session.driver.header 'Referer', root_path
     visit user_path(other)
+
     expect(page).to have_content 'Access denied.'
   end
-
 end
