@@ -5,9 +5,7 @@ RSpec.describe Location, type: :model do
   let(:blank_location) { Location.new }
   let(:state) { FactoryGirl.build(:state) }
 
-  it 'should belong to State' do
-    expect(location).to belong_to :state
-  end
+  it { should belong_to(:state) }
 
   context "Geocoding" do
     it 'should return an address' do

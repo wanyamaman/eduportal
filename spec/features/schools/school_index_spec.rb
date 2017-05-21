@@ -3,10 +3,7 @@
 #   I want to visit a 'schools' page
 #   So I can view a list of schools
 feature "School index" do
-  before(:each) do
-    @school = FactoryGirl.create(:school)
-  end
-
+  let!(:school) { FactoryGirl.create(:school) }
   let(:admin) { FactoryGirl.create(:user, :admin) }
   let(:mod) { FactoryGirl.create(:user, :moderator) }
 
