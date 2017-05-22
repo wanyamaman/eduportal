@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516110907) do
+ActiveRecord::Schema.define(version: 20170521204131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 20170516110907) do
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string  "name",       limit: 255,                       null: false
+    t.string  "name",        limit: 255,                       null: false
     t.integer "phone"
-    t.string  "email",      limit: 50
-    t.string  "ownership",  limit: 50,  default: "private",   null: false
-    t.string  "level",      limit: 50,  default: "secondary", null: false
-    t.string  "mode",       limit: 50,  default: "day",       null: false
-    t.string  "gender",     limit: 50,  default: "mixed",     null: false
+    t.string  "email",       limit: 50
+    t.string  "ownership",   limit: 50,  default: "private",   null: false
+    t.string  "level",       limit: 50,  default: "secondary", null: false
+    t.string  "mode",        limit: 50,  default: "day",       null: false
+    t.string  "gender",      limit: 50,  default: "mixed",     null: false
     t.text    "about"
     t.text    "news"
     t.text    "faculties"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20170516110907) do
     t.text    "contact_us"
     t.string  "logo"
     t.string  "banner"
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_schools_on_location_id", using: :btree
   end
 
   create_table "states", force: :cascade do |t|
@@ -74,4 +76,5 @@ ActiveRecord::Schema.define(version: 20170516110907) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "schools", "locations"
 end

@@ -18,14 +18,15 @@ RSpec.describe School, type: :model do
   it { should validate_length_of(:mode).is_at_most(50) }
   it { should validate_length_of(:gender).is_at_most(50) }
 
-  # Numericality
-  it { should validate_numericality_of(:phone) }
-
   # Inclusion
   it { should validate_inclusion_of(:ownership).in_array(%w(private public)) }
   it { should validate_inclusion_of(:level).in_array(%w(primary secondary pre-school all other)) }
   it { should validate_inclusion_of(:mode).in_array(%w(day boarding mixed other)) }
   it { should validate_inclusion_of(:gender).in_array(%w(male female mixed)) }
+
+  # Other
+  it { should validate_numericality_of(:phone) }
+  it { should belong_to(:location) }
 
   it "must have a valid email" do
     @school = FactoryGirl.build(:school)
