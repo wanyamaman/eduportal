@@ -1,7 +1,8 @@
 Geocoder.configure(
   :units => :km,
   :cache => Rails.cache,
-  :lookup => Rails.env.test? ? :test : :google
+  :lookup => Rails.env.test? ? :test : :google,
+  :api_key => ENV["google_api_key"]
 )
 
 # New york city stubs

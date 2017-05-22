@@ -6,6 +6,8 @@
     = f.input :phone
     = f.input :email
     .form-group
+      = f.association :location, label_method: :address, include_blank: true, class: 'form-control'
+    .form-group
       = f.label :ownership
       = f.select :ownership, School.ownership_options, {}, {class: 'form-control'}
     .form-group

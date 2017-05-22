@@ -1,6 +1,5 @@
 class School < ApplicationRecord
-
-  # belongs_to :locations
+  belongs_to :location
 
   # School images
   mount_uploader :logo, LogoUploader
@@ -31,6 +30,7 @@ class School < ApplicationRecord
             presence: true,
             length: {maximum:50}
   validates :about, presence: true
+  validates :location, presence: true
 
   # School type options
   def self.ownership_options

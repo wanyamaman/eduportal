@@ -31,7 +31,7 @@ group :development do
   gem 'rails_layout', '~> 1.0.31'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.0'
 end
 group :development, :test do
   gem 'byebug'

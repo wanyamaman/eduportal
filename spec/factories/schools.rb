@@ -9,6 +9,7 @@ FactoryGirl.define do
     ownership "private"
     phone 12345678
     about "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolores dolorem fugiat inventore est libero, voluptate, sequi nostrum sapiente sunt ipsum! Eveniet delectus tempora inventore dolor libero, temporibus nobis perferendis?"
+    association :location, strategy: :build
 
     trait :with_logo do
       logo Rack::Test::UploadedFile.new(File.open(

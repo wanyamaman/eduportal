@@ -73,6 +73,6 @@ class SchoolsController < ApplicationController
       params.require(:school).permit(:name, :phone, :email, :ownership,
                                      :level, :mode, :gender, :about, :logo,
                                      :banner, :news, :staff, :faculties,
-                                     :academics, :contact_us)
+                                     :academics, :contact_us, :location_id)
     end
 end
