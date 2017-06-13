@@ -7,4 +7,7 @@ class Inquiry
   validates :email, length: 5..100, presence: true, format: ApplicationRecord::EMAIL_REGEX
   validates :name, presence: true
 
+  def send_mail
+    ContactMailer.new_inquiry(self).deliver_now
+  end
 end
