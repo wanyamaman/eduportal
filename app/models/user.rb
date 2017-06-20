@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_paper_trail
   # User roles
   enum role: [:staff, :moderator, :admin]
   after_initialize :set_default_role, :if => :new_record?

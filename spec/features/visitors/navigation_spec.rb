@@ -10,6 +10,7 @@ feature "Navigation links", :devise do
   scenario "view navigation links" do
     visit root_path
 
+    expect(page).to_not have_link('Dashboard')
     expect(page).to have_link('Home', count: 2)
     expect(page).to have_link('Log in')
     expect(page).to have_link('Register')
