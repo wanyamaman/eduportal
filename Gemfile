@@ -16,9 +16,11 @@ gem 'high_voltage'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails', '~> 4.2'
 gem 'listen'
+gem 'paper_trail'
 gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.2'
+gem 'rails_admin', '~> 1.2'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'turbolinks', '~> 5.0'
@@ -33,6 +35,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'web-console', '~> 3.0'
 end
+
 group :development, :test do
   gem 'byebug'
   gem 'coveralls', require: false

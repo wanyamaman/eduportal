@@ -1,5 +1,6 @@
 class School < ApplicationRecord
   belongs_to :location
+  has_paper_trail
 
   # School images
   mount_uploader :logo, LogoUploader

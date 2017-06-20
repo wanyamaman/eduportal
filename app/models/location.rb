@@ -1,6 +1,7 @@
 class Location < ApplicationRecord
   belongs_to :state, counter_cache: true
   has_many :schools
+  has_paper_trail
 
   after_validation :reverse_geocode, if: (
                           :coordinates_present? && :coordinates_changed?)
