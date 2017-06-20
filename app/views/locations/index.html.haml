@@ -1,8 +1,5 @@
 %h1
-  Listing locations &nbsp;
-  - if current_user.try(:admin?)
-    %span
-      = link_to 'New Location', new_location_path, class: "btn btn-xs btn-success btn-sm"
+  Listing locations
 %br/
 
 .table-responsive
@@ -16,10 +13,6 @@
         %th Zip
         %th Latitude
         %th Longitude
-        %th
-        - if current_user.try(:admin?)
-          %th
-          %th
 
     %tbody
       - @locations.each do |location|
@@ -32,7 +25,3 @@
           %td= location.zip
           %td= location.latitude
           %td= location.longitude
-          %td= link_to 'Show', location, class: "btn btn-xs btn-brand-orange btn-block"
-          - if current_user.try(:admin?)
-            %td= link_to 'Edit', edit_location_path(location), class: "btn btn-xs btn-brand-secondary btn-block"
-            %td= link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-xs btn-brand-primary btn-block"

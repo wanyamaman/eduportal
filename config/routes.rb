@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :inquiries, only: :create
-  resources :states
-  resources :locations
-  resources :schools
-  resources :blogs
+  resources :locations, only: :index
+  resources :schools, only: [:index, :show]
   root to: 'visitors#index'
   devise_for :users
-  resources :users
 end

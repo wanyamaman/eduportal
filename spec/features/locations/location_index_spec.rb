@@ -17,11 +17,6 @@ feature "Location index" do
     signin(user.email, user.password)
     visit locations_path
     expect(page).to have_content('Listing locations')
-    expect(page).to_not have_content('Edit')
-    expect(page).to_not have_content('Destroy')
     expect(page).to have_content('40.7143528')
-
-    click_link('Show')
-    expect(page).to have_current_path(location_path(@location))
   end
 end

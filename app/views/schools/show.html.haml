@@ -4,14 +4,6 @@
 %h1
   = @school.name
 
-- if user_signed_in?
-  %div.text-right
-    - if current_user.try(:editor?)
-      = link_to "Edit School", edit_school_path(@school), class: "btn btn-brand-secondary js-block-sm"
-    - if current_user.try(:admin?)
-      = link_to "Delete School", @school, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-brand-primary js-block-sm"
-  %br/
-
 #school
   .row.row-eq-height
     .col-md-8

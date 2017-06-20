@@ -13,23 +13,11 @@ feature "Navigation links", :devise do
     visit root_path
 
     expect(page).to have_link('Edit account')
+    expect(page).to have_link('Dashboard')
     expect(page).to have_link('Log out')
-    expect(page).to_not have_link('users')
     expect(page).to have_link('Home')
     expect(page).to have_link('Schools')
     expect(page).to have_link('About Us')
     expect(page).to have_link('Contact Us')
-  end
-
-  # Scenario: View navigation links
-  #   Given I am signed in as admin
-  #   When I visit the home page
-  #   Then I see "users"
-  scenario "view navigation links as admin" do
-    admin = FactoryGirl.create(:user, :admin)
-    signin(admin.email, admin.password)
-    visit root_path
-
-    expect(page).to have_link('Users')
   end
 end
